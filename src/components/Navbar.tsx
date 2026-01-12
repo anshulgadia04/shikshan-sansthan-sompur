@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Languages } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 interface NavbarProps {
   activeSection: string;
@@ -8,15 +9,16 @@ interface NavbarProps {
 
 export default function Navbar({ activeSection, onSectionChange }: NavbarProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { language, toggleLanguage, t } = useLanguage();
 
   const menuItems = [
-    { id: 'home', label: 'होम' },
-    { id: 'about', label: 'हमारे बारे में' },
-    { id: 'classes', label: 'कक्षाएँ' },
-    { id: 'library', label: 'पुस्तकालय कॉर्नर' },
-    { id: 'features', label: 'विद्यालय की विशेषताएँ' },
-    { id: 'gallery', label: 'गैलरी' },
-    { id: 'contact', label: 'संपर्क करें' },
+    { id: 'home', label: t('nav.home') },
+    { id: 'about', label: t('nav.about') },
+    { id: 'classes', label: t('nav.classes') },
+    { id: 'library', label: t('nav.library') },
+    { id: 'features', label: t('nav.features') },
+    { id: 'gallery', label: t('nav.gallery') },
+    { id: 'contact', label: t('nav.contact') },
   ];
 
   const handleClick = (sectionId: string) => {
@@ -26,24 +28,24 @@ export default function Navbar({ activeSection, onSectionChange }: NavbarProps) 
 
   return (
     <nav className="fixed top-0 left-0 right-0 bg-white shadow-md border-b border-[#E5E0D8] z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <button
-            className="flex items-center group"
+            className="flex items-center text-left group "
             onClick={() => handleClick('home')}
-            aria-label="होम"
+            aria-label={t('nav.home')}
           >
             <img
               src="/logo.png"
-              alt="संस्कार शिक्षण संस्थान लोगो"
+              alt={t('hero.title')}
               className="h-20 w-auto mr-3"
             />
-            <h1 className="text-xl sm:text-2xl font-bold text-[#4E342E] group-hover:opacity-90 transition-opacity">
-              संस्कार शिक्षण संस्थान
+            <h1 className="text-sm md:text-xl font-bold text-[#4E342E] group-hover:opacity-90 transition-opacity">
+              {t('hero.title')}
             </h1>
           </button>
 
-          <div className="hidden md:flex space-x-1">
+          <div className="hidden md:flex items-center space-x-1">
             {menuItems.map((item) => (
               <button
                 key={item.id}
@@ -57,9 +59,28 @@ export default function Navbar({ activeSection, onSectionChange }: NavbarProps) 
                 {item.label}
               </button>
             ))}
+            
+            {/* Language Toggle Button */}
+            <button
+              onClick={toggleLanguage}
+              className="ml-2 px-4 py-2 rounded-lg text-sm lg:text-base font-medium bg-[#6F4E37] text-[#F5EFE6] hover:bg-[#4E342E] transition-all duration-300 flex items-center gap-2"
+              title={language === 'en' ? 'Switch to Hindi' : 'Switch to English'}
+            >
+              <Languages size={18} />
+              {language === 'en' ? 'हिंदी' : 'English'}
+            </button>
           </div>
 
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center gap-2">
+            {/* Mobile Language Toggle */}
+            <button
+              onClick={toggleLanguage}
+              className="p-2 rounded-lg bg-[#6F4E37] text-[#F5EFE6] hover:bg-[#4E342E] transition-colors"
+              title={language === 'en' ? 'Switch to Hindi' : 'Switch to English'}
+            >
+              <Languages size={20} />
+            </button>
+            
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="p-2 rounded-lg text-[#4E342E] hover:bg-[#F5EFE6] transition-colors"

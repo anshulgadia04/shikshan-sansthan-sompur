@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import { BookOpen, Send, CheckCircle } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 export default function Library() {
+  const { t } = useLanguage();
   const [formData, setFormData] = useState({
     studentName: '',
     className: '',
@@ -56,19 +58,17 @@ export default function Library() {
             </div>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#4E342E] mb-6">
-            पुस्तकालय कॉर्नर
+            {t('library.title')}
           </h2>
           <div className="w-24 h-1 bg-[#6F4E37] mx-auto rounded mb-8"></div>
 
           <div className="max-w-3xl mx-auto mb-8">
             <p className="text-lg sm:text-xl text-[#6F4E37] leading-relaxed mb-6">
-              हमारा पुस्तकालय ज्ञान का भंडार है। यहाँ विभिन्न विषयों पर पुस्तकें उपलब्ध हैं
-              जो विद्यार्थियों के सर्वांगीण विकास में सहायक हैं। पढ़ने की आदत बच्चों के
-              भविष्य को उज्ज्वल बनाती है।
+              {t('library.intro')}
             </p>
             <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-[#6F4E37]">
               <p className="text-xl sm:text-2xl font-semibold text-[#4E342E] italic">
-                "पुस्तकें ज्ञान का सबसे बड़ा स्रोत हैं"
+                {t('library.quote')}
               </p>
             </div>
           </div>
@@ -76,7 +76,7 @@ export default function Library() {
 
         <div className="max-w-2xl mx-auto bg-white rounded-2xl shadow-2xl p-8 sm:p-12 border-t-4 border-[#6F4E37]">
           <h3 className="text-2xl sm:text-3xl font-bold text-[#4E342E] mb-8 text-center">
-            पुस्तकालय हेतु अनुरोध / संदेश भेजें
+            {t('library.form.title')}
           </h3>
 
           {showSuccess && (
@@ -84,10 +84,10 @@ export default function Library() {
               <CheckCircle className="text-green-500 flex-shrink-0 mt-1" size={24} />
               <div>
                 <p className="text-green-800 font-semibold text-lg">
-                  आपका संदेश सफलतापूर्वक प्रशासन को भेज दिया गया है।
+                  {t('library.form.success.title')}
                 </p>
                 <p className="text-green-700 mt-1">
-                  हम जल्द ही आपसे संपर्क करेंगे।
+                  {t('library.form.success.desc')}
                 </p>
               </div>
             </div>
@@ -99,7 +99,7 @@ export default function Library() {
                 htmlFor="studentName"
                 className="block text-lg font-semibold text-[#4E342E] mb-2"
               >
-                विद्यार्थी का नाम *
+                {t('library.form.studentName')}
               </label>
               <input
                 type="text"
@@ -109,7 +109,7 @@ export default function Library() {
                 onChange={handleChange}
                 required
                 className="w-full px-4 py-3 border-2 border-[#D7C7A1] rounded-lg focus:outline-none focus:border-[#6F4E37] transition-colors text-[#4E342E] text-lg"
-                placeholder="विद्यार्थी का पूरा नाम लिखें"
+                placeholder={t('library.form.studentName.placeholder')}
               />
             </div>
 
@@ -118,7 +118,7 @@ export default function Library() {
                 htmlFor="className"
                 className="block text-lg font-semibold text-[#4E342E] mb-2"
               >
-                कक्षा *
+                {t('library.form.class')} *
               </label>
               <select
                 id="className"
@@ -128,18 +128,18 @@ export default function Library() {
                 required
                 className="w-full px-4 py-3 border-2 border-[#D7C7A1] rounded-lg focus:outline-none focus:border-[#6F4E37] transition-colors text-[#4E342E] text-lg"
               >
-                <option value="">कक्षा चुनें</option>
-                <option value="नर्सरी">नर्सरी</option>
-                <option value="एल.के.जी.">एल.के.जी.</option>
-                <option value="यू.के.जी.">यू.के.जी.</option>
-                <option value="पहली">पहली</option>
-                <option value="दूसरी">दूसरी</option>
-                <option value="तीसरी">तीसरी</option>
-                <option value="चौथी">चौथी</option>
-                <option value="पाँचवीं">पाँचवीं</option>
-                <option value="छठी">छठी</option>
-                <option value="सातवीं">सातवीं</option>
-                <option value="आठवीं">आठवीं</option>
+                <option value="">{t('library.form.class.placeholder')}</option>
+                <option value="नर्सरी">{t('classes.nursery')}</option>
+                <option value="एल.के.जी.">{t('classes.lkg')}</option>
+                <option value="यू.के.जी.">{t('classes.ukg')}</option>
+                <option value="पहली">1st</option>
+                <option value="दूसरी">2nd</option>
+                <option value="तीसरी">3rd</option>
+                <option value="चौथी">4th</option>
+                <option value="पाँचवीं">5th</option>
+                <option value="छठी">6th</option>
+                <option value="सातवीं">7th</option>
+                <option value="आठवीं">8th</option>
               </select>
             </div>
 
@@ -148,7 +148,7 @@ export default function Library() {
                 htmlFor="bookName"
                 className="block text-lg font-semibold text-[#4E342E] mb-2"
               >
-                पुस्तक का नाम / विषय *
+                {t('library.form.bookName')} *
               </label>
               <input
                 type="text"
@@ -158,7 +158,7 @@ export default function Library() {
                 onChange={handleChange}
                 required
                 className="w-full px-4 py-3 border-2 border-[#D7C7A1] rounded-lg focus:outline-none focus:border-[#6F4E37] transition-colors text-[#4E342E] text-lg"
-                placeholder="पुस्तक का नाम या विषय बताएं"
+                placeholder={t('library.form.bookName.placeholder')}
               />
             </div>
 
@@ -167,7 +167,7 @@ export default function Library() {
                 htmlFor="message"
                 className="block text-lg font-semibold text-[#4E342E] mb-2"
               >
-                संदेश
+                {t('library.form.message')}
               </label>
               <textarea
                 id="message"
@@ -176,7 +176,7 @@ export default function Library() {
                 onChange={handleChange}
                 rows={4}
                 className="w-full px-4 py-3 border-2 border-[#D7C7A1] rounded-lg focus:outline-none focus:border-[#6F4E37] transition-colors text-[#4E342E] text-lg resize-none"
-                placeholder="कोई अतिरिक्त जानकारी या संदेश (वैकल्पिक)"
+                placeholder={t('library.form.message.placeholder')}
               ></textarea>
             </div>
 
@@ -186,11 +186,11 @@ export default function Library() {
               className="w-full bg-gradient-to-r from-[#4E342E] to-[#6F4E37] text-[#F5EFE6] py-4 rounded-lg font-bold text-lg hover:from-[#6F4E37] hover:to-[#4E342E] transition-all duration-300 transform hover:scale-105 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3"
             >
               {isSubmitting ? (
-                'भेजा जा रहा है...'
+                t('library.form.submitting')
               ) : (
                 <>
                   <Send size={24} />
-                  प्रशासन को भेजें
+                  {t('library.form.submit')}
                 </>
               )}
             </button>

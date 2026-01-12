@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { LanguageProvider } from './contexts/LanguageContext';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Hero from './sections/Hero';
@@ -21,42 +22,44 @@ function App() {
   }, [activeSection]);
 
   return (
-    <div className="min-h-screen bg-[#F5EFE6]">
-      <Navbar activeSection={activeSection} onSectionChange={setActiveSection} />
+    <LanguageProvider>
+      <div className="min-h-screen bg-[#F5EFE6]">
+        <Navbar activeSection={activeSection} onSectionChange={setActiveSection} />
 
-      <main className="pt-20">
-        <div id="home">
-          <Hero onNavigate={setActiveSection} />
-          <Highlights />
-        </div>
+        <main className="pt-20">
+          <div id="home">
+            <Hero onNavigate={setActiveSection} />
+            <Highlights />
+          </div>
 
-        <div id="about">
-          <About />
-        </div>
+          <div id="about">
+            <About />
+          </div>
 
-        <div id="classes">
-          <Classes />
-        </div>
+          <div id="classes">
+            <Classes />
+          </div>
 
-        <div id="library">
-          <Library />
-        </div>
+          <div id="library">
+            <Library />
+          </div>
 
-        <div id="features">
-          <Features />
-        </div>
+          <div id="features">
+            <Features />
+          </div>
 
-        <div id="gallery">
-          <Gallery />
-        </div>
+          <div id="gallery">
+            <Gallery />
+          </div>
 
-        <div id="contact">
-          <Contact />
-        </div>
-      </main>
+          <div id="contact">
+            <Contact />
+          </div>
+        </main>
 
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </LanguageProvider>
   );
 }
 

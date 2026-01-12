@@ -1,36 +1,39 @@
 import { Users, Laptop, Trophy, Shield, Heart, BookOpen } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 export default function Features() {
+  const { t } = useLanguage();
+  
   const features = [
     {
       icon: '/feature-icon-1.png',
-      title: 'अनुभवी शिक्षक',
-      description: 'हमारे सभी शिक्षक प्रशिक्षित और अनुभवी हैं जो बच्चों के सर्वांगीण विकास पर ध्यान देते हैं',
+      title: t('features.teachers.title'),
+      description: t('features.teachers.desc'),
     },
     {
       icon: '/feature-icon-2.png',
-      title: 'स्मार्ट शिक्षण',
-      description: 'आधुनिक तकनीक और पारंपरिक शिक्षण विधियों का सुंदर समन्वय',
+      title: t('features.smart.title'),
+      description: t('features.smart.desc'),
     },
     {
       icon: '/feature-icon-3.png',
-      title: 'खेलकूद एवं सांस्कृतिक गतिविधियाँ',
-      description: 'शारीरिक और मानसिक विकास के लिए विभिन्न खेल और सांस्कृतिक कार्यक्रम',
+      title: t('features.sports.title'),
+      description: t('features.sports.desc'),
     },
     {
       icon: '/feature-icon-4.png',
-      title: 'सुरक्षित वातावरण',
-      description: 'CCTV निगरानी, प्रशिक्षित सुरक्षा कर्मी और सुरक्षित परिसर',
+      title: t('features.safety.title'),
+      description: t('features.safety.desc'),
     },
     {
       icon: '/feature-icon-5.png',
-      title: 'संस्कार केंद्रित शिक्षा',
-      description: 'नैतिक मूल्यों और संस्कारों के साथ आधुनिक शिक्षा का समावेश',
+      title: t('features.sanskar.title'),
+      description: t('features.sanskar.desc'),
     },
     {
       icon: '/feature-icon-6.png',
-      title: 'समृद्ध पुस्तकालय',
-      description: 'विभिन्न विषयों की पुस्तकों से सुसज्जित आधुनिक पुस्तकालय',
+      title: t('features.library.title'),
+      description: t('features.library.desc'),
     },
   ];
 
@@ -39,10 +42,10 @@ export default function Features() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 md:mb-16 animate-fade-in">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#4E342E] mb-4">
-            विद्यालय की विशेषताएँ
+            {t('features.title')}
           </h2>
           <p className="text-base sm:text-lg text-[#6F4E37] max-w-4xl mx-auto leading-relaxed">
-            हमारा विद्यालय आपके बच्चों के उज्ज्वल भविष्य के लिए हर आवश्यक सुविधा प्रदान करता है [cite: 16]
+            {t('features.subtitle')}
           </p>
         </div>
 
@@ -74,24 +77,24 @@ export default function Features() {
 
         <div className="bg-[#3E2A22] p-8 sm:p-12 rounded-2xl shadow-xl animate-fade-in">
           <h3 className="text-2xl sm:text-3xl font-bold mb-8 sm:mb-10 text-center text-white">
-            अतिरिक्त सुविधाएँ
+            {t('features.additional.title')}
           </h3>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             <div className="text-center">
               <div className="text-4xl sm:text-5xl font-bold mb-2 text-white">100%</div>
-              <p className="text-[#F5EFE6] text-sm sm:text-base">सुरक्षित वातावरण</p>
+              <p className="text-[#F5EFE6] text-sm sm:text-base">{t('features.additional.safe')}</p>
             </div>
             <div className="text-center">
               <div className="text-4xl sm:text-5xl font-bold mb-2 text-white">24/7</div>
-              <p className="text-[#F5EFE6] text-sm sm:text-base">CCTV निगरानी</p>
+              <p className="text-[#F5EFE6] text-sm sm:text-base">{t('features.additional.cctv')}</p>
             </div>
             <div className="text-center">
               <div className="text-4xl sm:text-5xl font-bold mb-2 text-white">15+</div>
-              <p className="text-[#F5EFE6] text-sm sm:text-base">अनुभवी शिक्षक</p>
+              <p className="text-[#F5EFE6] text-sm sm:text-base">{t('features.additional.teachers')}</p>
             </div>
             <div className="text-center">
               <div className="text-4xl sm:text-5xl font-bold mb-2 text-white">500+</div>
-              <p className="text-[#F5EFE6] text-sm sm:text-base">संतुष्ट विद्यार्थी</p>
+              <p className="text-[#F5EFE6] text-sm sm:text-base">{t('features.additional.students')}</p>
             </div>
           </div>
         </div>

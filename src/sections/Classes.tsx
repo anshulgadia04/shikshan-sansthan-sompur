@@ -1,37 +1,41 @@
+import { useLanguage } from '../contexts/LanguageContext';
+
 export default function Classes() {
+  const { t } = useLanguage();
+  
   const classes = [
     {
-      name: 'नर्सरी',
-      description: 'खेल-खेल में सीखने का प्रारंभिक चरण',
-      ageGroup: 'आयु वर्ग: 3-4 वर्ष',
+      name: t('classes.nursery'),
+      description: t('classes.nursery.desc'),
+      ageGroup: t('classes.nursery.age'),
       image1: '/class-nursery-1.png',
       image2: '/class-nursery-2.png',
     },
     {
-      name: 'एल.के.जी.',
-      description: 'बुनियादी ज्ञान और कौशल विकास',
-      ageGroup: 'आयु वर्ग: 4-5 वर्ष',
+      name: t('classes.lkg'),
+      description: t('classes.lkg.desc'),
+      ageGroup: t('classes.lkg.age'),
       image1: '/class-lkg-1.png',
       image2: '/class-lkg-2.png',
     },
     {
-      name: 'यू.के.जी.',
-      description: 'प्राथमिक शिक्षा की तैयारी',
-      ageGroup: 'आयु वर्ग: 5-6 वर्ष',
+      name: t('classes.ukg'),
+      description: t('classes.ukg.desc'),
+      ageGroup: t('classes.ukg.age'),
       image1: '/class-ukg-1.png',
       image2: '/class-ukg-2.png',
     },
     {
-      name: 'पहली से पाँचवीं',
-      description: 'प्राथमिक शिक्षा का मजबूत आधार',
-      ageGroup: 'आयु वर्ग: 6-11 वर्ष',
+      name: t('classes.primary'),
+      description: t('classes.primary.desc'),
+      ageGroup: t('classes.primary.age'),
       image1: '/class-primary-1.png',
       image2: '/class-primary-2.png',
     },
     {
-      name: 'छठी से आठवीं',
-      description: 'उच्च प्राथमिक शिक्षा और विषय ज्ञान',
-      ageGroup: 'आयु वर्ग: 11-14 वर्ष',
+      name: t('classes.secondary'),
+      description: t('classes.secondary.desc'),
+      ageGroup: t('classes.secondary.age'),
       image1: '/class-secondary-1.png',
       image2: '/class-secondary-2.png',
     },
@@ -42,11 +46,11 @@ export default function Classes() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 md:mb-20 animate-fade-in">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#4E342E] mb-3">
-            कक्षाएँ
+            {t('classes.title')}
           </h2>
           <div className="w-16 h-1 bg-[#4E342E] mx-auto mb-4"></div>
           <p className="text-base sm:text-lg text-[#6F4E37] max-w-2xl mx-auto">
-            नर्सरी से आठवीं कक्षा तक संपूर्ण शिक्षा व्यवस्था
+            {t('classes.subtitle')}
           </p>
         </div>
 
@@ -98,7 +102,7 @@ export default function Classes() {
 
         <div className="mt-16 bg-[#F5EFE6] p-8 sm:p-12 rounded-3xl shadow-[0_6px_24px_rgba(0,0,0,0.08)] max-w-5xl mx-auto border-4 border-[#4E342E] animate-fade-in">
           <h3 className="text-2xl sm:text-3xl font-bold text-[#4E342E] mb-3 text-center">
-            हमारी शिक्षण पद्धति
+            {t('classes.teaching.title')}
           </h3>
           <div className="w-16 h-1 bg-[#4E342E] mx-auto mb-10"></div>
           
@@ -112,7 +116,7 @@ export default function Classes() {
                 />
               </div>
               <p className="text-[#4E342E] leading-relaxed text-base font-medium">
-                प्रत्येक बच्चे पर व्यक्तिगत ध्यान
+                {t('classes.teaching.individual')}
               </p>
             </div>
             
@@ -125,7 +129,7 @@ export default function Classes() {
                 />
               </div>
               <p className="text-[#4E342E] leading-relaxed text-base font-medium">
-                आधुनिक और पारंपरिक शिक्षा का समन्वय
+                {t('classes.teaching.blend')}
               </p>
             </div>
             
@@ -138,7 +142,7 @@ export default function Classes() {
                 />
               </div>
               <p className="text-[#4E342E] leading-relaxed text-base font-medium">
-                नियमित मूल्यांकन और अभिभावक संवाद
+                {t('classes.teaching.assessment')}
               </p>
             </div>
             
@@ -151,7 +155,7 @@ export default function Classes() {
                 />
               </div>
               <p className="text-[#4E342E] leading-relaxed text-base font-medium">
-                पाठ्यक्रम और पाठ्येतर गतिविधियों का संतुलन
+                {t('classes.teaching.balance')}
               </p>
             </div>
           </div>

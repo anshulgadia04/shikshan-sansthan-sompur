@@ -1,26 +1,29 @@
 import { Users, Award, Bus, Shield } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 export default function Highlights() {
+  const { t } = useLanguage();
+  
   const highlights = [
     {
       icon: Users,
-      title: 'नर्सरी से आठवीं तक',
-      description: 'सभी कक्षाओं के लिए संपूर्ण शिक्षा व्यवस्था',
+      title: t('highlights.nursery.title'),
+      description: t('highlights.nursery.desc'),
     },
     {
       icon: Award,
-      title: 'अनुभवी एवं प्रशिक्षित शिक्षक',
-      description: 'योग्य और समर्पित शिक्षक मंडल',
+      title: t('highlights.teachers.title'),
+      description: t('highlights.teachers.desc'),
     },
     {
       icon: Bus,
-      title: 'बस सुविधा उपलब्ध',
-      description: 'सुरक्षित परिवहन की व्यवस्था',
+      title: t('highlights.bus.title'),
+      description: t('highlights.bus.desc'),
     },
     {
       icon: Shield,
-      title: 'CCTV सुरक्षा व्यवस्था',
-      description: 'पूर्ण निगरानी एवं सुरक्षा',
+      title: t('highlights.cctv.title'),
+      description: t('highlights.cctv.desc'),
     },
   ];
 
@@ -29,7 +32,7 @@ export default function Highlights() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 md:mb-28 animate-fade-in">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#4E342E]">
-            हमारी मुख्य विशेषताएँ
+            {t('highlights.title')}
           </h2>
         </div>
 

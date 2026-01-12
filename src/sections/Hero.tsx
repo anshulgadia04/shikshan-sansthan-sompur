@@ -1,10 +1,13 @@
 import { BookOpen, GraduationCap } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 interface HeroProps {
   onNavigate: (section: string) => void;
 }
 
 export default function Hero({ onNavigate }: HeroProps) {
+  const { t } = useLanguage();
+  
   return (
     <section
       className="relative min-h-screen flex items-center justify-center text-white overflow-hidden bg-[#4E342E]"
@@ -32,23 +35,23 @@ export default function Hero({ onNavigate }: HeroProps) {
         </div>
 
         <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-6 leading-tight text-shadow-lg">
-          संस्कार शिक्षण संस्थान
+          {t('hero.title')}
         </h1>
 
         <p className="text-xl sm:text-2xl md:text-3xl mb-4 text-[#D7C7A1] font-semibold">
-          सोमपुर
+          {t('hero.location')}
         </p>
 
         <div className="flex items-center justify-center gap-4 mb-12">
           <div className="h-1 w-16 bg-[#D7C7A1] rounded"></div>
           <p className="text-xl sm:text-2xl md:text-3xl font-medium text-shadow">
-            शिक्षा • सेवा • संस्कार
+            {t('hero.tagline')}
           </p>
           <div className="h-1 w-16 bg-[#D7C7A1] rounded"></div>
         </div>
 
         <p className="text-lg sm:text-xl mb-12 max-w-3xl mx-auto leading-relaxed text-[#F5EFE6]">
-          गुणवत्तापूर्ण शिक्षा और संस्कारों के साथ आपके बच्चों का सर्वांगीण विकास
+          {t('hero.description')}
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -57,14 +60,14 @@ export default function Hero({ onNavigate }: HeroProps) {
             className="px-8 py-4 bg-[#F5EFE6] text-[#4E342E] rounded-full font-semibold text-lg hover:bg-[#D7C7A1] transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center gap-2 w-full sm:w-auto justify-center"
           >
             <BookOpen size={24} />
-            प्रवेश प्रारंभ
+            {t('hero.cta.learn')}
           </button>
 
           <button
             onClick={() => onNavigate('contact')}
             className="px-8 py-4 bg-transparent border-2 border-[#F5EFE6] text-[#F5EFE6] rounded-full font-semibold text-lg hover:bg-[#F5EFE6] hover:text-[#4E342E] transition-all duration-300 transform hover:scale-105 w-full sm:w-auto"
           >
-            अभी संपर्क करें
+            {t('hero.cta.contact')}
           </button>
         </div>
       </div>

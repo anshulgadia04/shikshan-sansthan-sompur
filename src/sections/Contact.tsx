@@ -1,16 +1,19 @@
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 export default function Contact() {
+  const { t } = useLanguage();
+  
   return (
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#4E342E] mb-4">
-            संपर्क करें
+            {t('contact.title')}
           </h2>
           <div className="w-24 h-1 bg-[#6F4E37] mx-auto rounded mb-6"></div>
           <p className="text-lg sm:text-xl text-[#6F4E37] max-w-3xl mx-auto leading-relaxed">
-            हम आपकी सेवा के लिए सदैव उपलब्ध हैं
+            {t('contact.subtitle')}
           </p>
         </div>
 
@@ -22,15 +25,15 @@ export default function Contact() {
                   <MapPin size={28} className="text-[#F5EFE6]" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-[#4E342E] mb-3">हमारा पता</h3>
+                  <h3 className="text-xl font-bold text-[#4E342E] mb-3">{t('contact.address.title')}</h3>
                   <p className="text-[#6F4E37] leading-relaxed">
-                    संस्कार शिक्षण संस्थान
+                    {t('contact.address.line1')}
                     <br />
-                    सोमपुर, जिला - उदाहरण
+                    {t('contact.address.line2')}
                     <br />
-                    राज्य - उदाहरण राज्य
+                    {t('contact.address.line3')}
                     <br />
-                    पिन कोड - 123456
+                    {t('contact.address.line4')}
                   </p>
                 </div>
               </div>
@@ -42,12 +45,12 @@ export default function Contact() {
                   <Phone size={28} className="text-[#F5EFE6]" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-[#4E342E] mb-3">संपर्क नंबर</h3>
+                  <h3 className="text-xl font-bold text-[#4E342E] mb-3">{t('contact.phone.title')}</h3>
                   <p className="text-[#6F4E37] leading-relaxed mb-2">
-                    मुख्य कार्यालय: 98765 43210
+                    {t('contact.phone.main')}
                   </p>
                   <p className="text-[#6F4E37] leading-relaxed">
-                    वैकल्पिक नंबर: 98765 43211
+                    {t('contact.phone.alt')}
                   </p>
                 </div>
               </div>
@@ -59,11 +62,11 @@ export default function Contact() {
                   <Clock size={28} className="text-[#4E342E]" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-[#4E342E] mb-3">समय</h3>
+                  <h3 className="text-xl font-bold text-[#4E342E] mb-3">{t('contact.timing.title')}</h3>
                   <p className="text-[#6F4E37] leading-relaxed mb-2">
-                    सोमवार - शनिवार: सुबह 8:00 - दोपहर 2:00
+                    {t('contact.timing.weekday')}
                   </p>
-                  <p className="text-[#6F4E37] leading-relaxed">रविवार: अवकाश</p>
+                  <p className="text-[#6F4E37] leading-relaxed">{t('contact.timing.sunday')}</p>
                 </div>
               </div>
             </div>
@@ -72,7 +75,7 @@ export default function Contact() {
           <div>
             <div className="bg-gradient-to-br from-[#F5EFE6] to-white p-8 sm:p-12 rounded-2xl shadow-2xl border-t-4 border-[#6F4E37]">
               <h3 className="text-2xl sm:text-3xl font-bold text-[#4E342E] mb-8 text-center">
-                संदेश भेजें
+                {t('contact.form.title')}
               </h3>
 
               <form className="space-y-6">
@@ -81,13 +84,13 @@ export default function Contact() {
                     htmlFor="name"
                     className="block text-lg font-semibold text-[#4E342E] mb-2"
                   >
-                    नाम
+                    {t('contact.form.name')}
                   </label>
                   <input
                     type="text"
                     id="name"
                     className="w-full px-4 py-3 border-2 border-[#D7C7A1] rounded-lg focus:outline-none focus:border-[#6F4E37] transition-colors text-[#4E342E]"
-                    placeholder="अपना नाम लिखें"
+                    placeholder={t('contact.form.name.placeholder')}
                   />
                 </div>
 
@@ -96,13 +99,13 @@ export default function Contact() {
                     htmlFor="phone"
                     className="block text-lg font-semibold text-[#4E342E] mb-2"
                   >
-                    दूरभाष संख्या
+                    {t('contact.form.phone')}
                   </label>
                   <input
                     type="tel"
                     id="phone"
                     className="w-full px-4 py-3 border-2 border-[#D7C7A1] rounded-lg focus:outline-none focus:border-[#6F4E37] transition-colors text-[#4E342E]"
-                    placeholder="अपना मोबाइल नंबर लिखें"
+                    placeholder={t('contact.form.phone.placeholder')}
                   />
                 </div>
 
@@ -111,13 +114,13 @@ export default function Contact() {
                     htmlFor="subject"
                     className="block text-lg font-semibold text-[#4E342E] mb-2"
                   >
-                    विषय
+                    {t('contact.form.email')}
                   </label>
                   <input
                     type="text"
                     id="subject"
                     className="w-full px-4 py-3 border-2 border-[#D7C7A1] rounded-lg focus:outline-none focus:border-[#6F4E37] transition-colors text-[#4E342E]"
-                    placeholder="संदेश का विषय"
+                    placeholder={t('contact.form.email.placeholder')}
                   />
                 </div>
 
@@ -126,13 +129,13 @@ export default function Contact() {
                     htmlFor="message"
                     className="block text-lg font-semibold text-[#4E342E] mb-2"
                   >
-                    संदेश
+                    {t('contact.form.message')}
                   </label>
                   <textarea
                     id="message"
                     rows={4}
                     className="w-full px-4 py-3 border-2 border-[#D7C7A1] rounded-lg focus:outline-none focus:border-[#6F4E37] transition-colors text-[#4E342E] resize-none"
-                    placeholder="अपना संदेश लिखें"
+                    placeholder={t('contact.form.message.placeholder')}
                   ></textarea>
                 </div>
 
@@ -141,7 +144,7 @@ export default function Contact() {
                   className="w-full bg-gradient-to-r from-[#4E342E] to-[#6F4E37] text-[#F5EFE6] py-4 rounded-lg font-bold text-lg hover:from-[#6F4E37] hover:to-[#4E342E] transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center gap-3"
                 >
                   <Mail size={24} />
-                  संदेश भेजें
+                  {t('contact.form.submit')}
                 </button>
               </form>
             </div>

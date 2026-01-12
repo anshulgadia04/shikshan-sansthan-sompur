@@ -1,33 +1,37 @@
+import { useLanguage } from '../contexts/LanguageContext';
+
 export default function Gallery() {
+  const { t } = useLanguage();
+  
   const images = [
     {
-      title: 'विद्यालय भवन',
-      description: 'हमारा सुंदर और आधुनिक विद्यालय परिसर',
+      title: t('gallery.building'),
+      description: t('gallery.building.desc'),
       image: '/homeBG.png',
     },
     {
-      title: 'कक्षा कक्ष',
-      description: 'सुसज्जित और हवादार कक्षाएँ',
+      title: t('gallery.classroom'),
+      description: t('gallery.classroom.desc'),
       image: '/gallery-2.png',
     },
     {
-      title: 'पुस्तकालय',
-      description: 'समृद्ध पुस्तक संग्रह',
+      title: t('gallery.library'),
+      description: t('gallery.library.desc'),
       image: '/gallery-3.png',
     },
     {
-      title: 'खेल का मैदान',
-      description: 'विशाल खेल मैदान',
+      title: t('gallery.playground'),
+      description: t('gallery.playground.desc'),
       image: '/gallery-4.png',
     },
     {
-      title: 'सांस्कृतिक कार्यक्रम',
-      description: 'वार्षिक उत्सव और प्रतियोगिताएँ',
+      title: t('gallery.cultural'),
+      description: t('gallery.cultural.desc'),
       image: '/gallery-5.png',
     },
     {
-      title: 'प्रयोगशाला',
-      description: 'विज्ञान प्रयोगशाला',
+      title: t('gallery.lab'),
+      description: t('gallery.lab.desc'),
       image: '/gallery-6.png',
     },
   ];
@@ -37,11 +41,11 @@ export default function Gallery() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 md:mb-16 animate-fade-in">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#4E342E] mb-3">
-            गैलरी
+            {t('gallery.title')}
           </h2>
           <div className="w-16 h-1 bg-[#4E342E] mx-auto mb-4"></div>
           <p className="text-base sm:text-lg text-[#6F4E37]">
-            हमारे विद्यालय की झलकियाँ
+            {t('gallery.subtitle')}
           </p>
         </div>
 
