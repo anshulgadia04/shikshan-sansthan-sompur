@@ -1,8 +1,10 @@
-import { Users, Award, Bus, Shield } from 'lucide-react';
+import { Users, Award, Bus, Shield, X } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
+import { useState } from 'react';
 
 export default function Highlights() {
   const { t } = useLanguage();
+  const [openModal, setOpenModal] = useState<number | null>(null);
   
   const highlights = [
     {
@@ -42,9 +44,10 @@ export default function Highlights() {
               key={index} 
               className="relative h-full animate-fade-in group"
               style={{ animationDelay: `${index * 150}ms` }}
+              onClick={() => setOpenModal(index)}
             >
               {/* Card */}
-              <div className="bg-white rounded-2xl pt-12 pb-8 px-6 shadow-[0_6px_24px_rgba(0,0,0,0.06)] border-2 border-[#D8C08C] hover:shadow-[0_16px_40px_rgba(111,78,55,0.15)] hover:border-[#B8A87C] hover:-translate-y-2 hover:scale-[1.02] transition-all duration-500 ease-out h-full min-h-[180px] flex flex-col">
+              <div className="bg-white rounded-2xl pt-12 pb-8 px-6 shadow-[0_6px_24px_rgba(0,0,0,0.06)] border-2 border-[#D8C08C] hover:shadow-[0_16px_40px_rgba(111,78,55,0.15)] hover:border-[#B8A87C] hover:-translate-y-2 hover:scale-[1.02] transition-all duration-500 ease-out h-full min-h-[180px] flex flex-col cursor-pointer">
                 {/* Top badge (overlapping circle) */}
                 <div className="absolute -top-8 left-1/2 -translate-x-1/2 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-12">
                   <div className="w-16 h-16 rounded-full bg-gradient-to-b from-[#6F4E37] to-[#3E2A22] shadow-[0_6px_16px_rgba(0,0,0,0.25)] group-hover:shadow-[0_8px_24px_rgba(0,0,0,0.35)] flex items-center justify-center transition-all duration-500">
@@ -64,6 +67,43 @@ export default function Highlights() {
             </div>
           ))}
         </div>
+
+        {/* Modal */}
+        {openModal !== null && (
+          <div 
+            className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4"
+            onClick={() => setOpenModal(null)}
+          >
+            <div 
+              className="bg-white rounded-2xl max-w-2xl w-full p-8 relative animate-fade-in shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                onClick={() => setOpenModal(null)}
+                className="absolute top-4 right-4 text-[#4E342E] hover:text-[#6F4E37] transition-colors"
+              >
+                <X size={28} />
+              </button>
+              
+              <div className="flex flex-col items-center">
+                <div className="w-24 h-24 rounded-full bg-gradient-to-b from-[#6F4E37] to-[#3E2A22] shadow-lg flex items-center justify-center mb-6">
+                  <div className="w-20 h-20 rounded-full bg-[#4E342E] ring-4 ring-[#D8C08C] flex items-center justify-center">
+                    {(() => {
+                      const Icon = highlights[openModal].icon;
+                      return <Icon size={32} className="text-[#F5EFE6]" />;
+                    })()}
+                  </div>
+                </div>
+                <h3 className="text-2xl sm:text-3xl font-bold text-[#4E342E] mb-4 text-center">
+                  {highlights[openModal].title}
+                </h3>
+                <p className="text-[#6F4E37] text-center text-base sm:text-lg leading-relaxed">
+                  {highlights[openModal].description}
+                </p>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );

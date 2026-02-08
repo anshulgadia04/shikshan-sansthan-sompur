@@ -1,52 +1,8 @@
-import { useState } from 'react';
-import { BookOpen, Send, CheckCircle } from 'lucide-react';
+import { BookOpen, Send } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 export default function Library() {
   const { t } = useLanguage();
-  const [formData, setFormData] = useState({
-    studentName: '',
-    className: '',
-    bookName: '',
-    message: '',
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [showSuccess, setShowSuccess] = useState(false);
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    try {
-      // Simulate sending without a backend/database
-      await new Promise((resolve) => setTimeout(resolve, 600));
-
-      setShowSuccess(true);
-      setFormData({
-        studentName: '',
-        className: '',
-        bookName: '',
-        message: '',
-      });
-
-      setTimeout(() => {
-        setShowSuccess(false);
-      }, 5000);
-    } catch (error) {
-      console.error('Error submitting form:', error);
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
-  ) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
 
   return (
     <section className="py-20 bg-gradient-to-br from-[#F5EFE6] to-white">
@@ -79,34 +35,24 @@ export default function Library() {
             {t('library.form.title')}
           </h3>
 
-          {showSuccess && (
-            <div className="mb-8 p-6 bg-green-50 border-l-4 border-green-500 rounded-lg flex items-start gap-4 animate-fade-in">
-              <CheckCircle className="text-green-500 flex-shrink-0 mt-1" size={24} />
-              <div>
-                <p className="text-green-800 font-semibold text-lg">
-                  {t('library.form.success.title')}
-                </p>
-                <p className="text-green-700 mt-1">
-                  {t('library.form.success.desc')}
-                </p>
-              </div>
-            </div>
-          )}
-
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form action="https://formsubmit.co/anshulgadia04@gmail.com" method="POST" className="space-y-6">
+            {/* FormSubmit Configuration */}
+            <input type="hidden" name="_subject" value="Library Book Request - Sanskar Shikshan Sansthan" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="text" name="_honey" style={{display: 'none'}} />
+            
             <div>
               <label
                 htmlFor="studentName"
                 className="block text-lg font-semibold text-[#4E342E] mb-2"
               >
-                {t('library.form.studentName')}
+                {t('library.form.studentName')} *
               </label>
               <input
                 type="text"
                 id="studentName"
                 name="studentName"
-                value={formData.studentName}
-                onChange={handleChange}
                 required
                 className="w-full px-4 py-3 border-2 border-[#D7C7A1] rounded-lg focus:outline-none focus:border-[#6F4E37] transition-colors text-[#4E342E] text-lg"
                 placeholder={t('library.form.studentName.placeholder')}
@@ -122,24 +68,22 @@ export default function Library() {
               </label>
               <select
                 id="className"
-                name="className"
-                value={formData.className}
-                onChange={handleChange}
+                name="class"
                 required
                 className="w-full px-4 py-3 border-2 border-[#D7C7A1] rounded-lg focus:outline-none focus:border-[#6F4E37] transition-colors text-[#4E342E] text-lg"
               >
                 <option value="">{t('library.form.class.placeholder')}</option>
-                <option value="नर्सरी">{t('classes.nursery')}</option>
-                <option value="एल.के.जी.">{t('classes.lkg')}</option>
-                <option value="यू.के.जी.">{t('classes.ukg')}</option>
-                <option value="पहली">1st</option>
-                <option value="दूसरी">2nd</option>
-                <option value="तीसरी">3rd</option>
-                <option value="चौथी">4th</option>
-                <option value="पाँचवीं">5th</option>
-                <option value="छठी">6th</option>
-                <option value="सातवीं">7th</option>
-                <option value="आठवीं">8th</option>
+                <option value="Nursery">{t('classes.nursery')}</option>
+                <option value="L.K.G.">{t('classes.lkg')}</option>
+                <option value="U.K.G.">{t('classes.ukg')}</option>
+                <option value="1st">1st</option>
+                <option value="2nd">2nd</option>
+                <option value="3rd">3rd</option>
+                <option value="4th">4th</option>
+                <option value="5th">5th</option>
+                <option value="6th">6th</option>
+                <option value="7th">7th</option>
+                <option value="8th">8th</option>
               </select>
             </div>
 
@@ -154,8 +98,6 @@ export default function Library() {
                 type="text"
                 id="bookName"
                 name="bookName"
-                value={formData.bookName}
-                onChange={handleChange}
                 required
                 className="w-full px-4 py-3 border-2 border-[#D7C7A1] rounded-lg focus:outline-none focus:border-[#6F4E37] transition-colors text-[#4E342E] text-lg"
                 placeholder={t('library.form.bookName.placeholder')}
@@ -172,8 +114,6 @@ export default function Library() {
               <textarea
                 id="message"
                 name="message"
-                value={formData.message}
-                onChange={handleChange}
                 rows={4}
                 className="w-full px-4 py-3 border-2 border-[#D7C7A1] rounded-lg focus:outline-none focus:border-[#6F4E37] transition-colors text-[#4E342E] text-lg resize-none"
                 placeholder={t('library.form.message.placeholder')}
@@ -182,17 +122,10 @@ export default function Library() {
 
             <button
               type="submit"
-              disabled={isSubmitting}
-              className="w-full bg-gradient-to-r from-[#4E342E] to-[#6F4E37] text-[#F5EFE6] py-4 rounded-lg font-bold text-lg hover:from-[#6F4E37] hover:to-[#4E342E] transition-all duration-300 transform hover:scale-105 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3"
+              className="w-full bg-gradient-to-r from-[#4E342E] to-[#6F4E37] text-[#F5EFE6] py-4 rounded-lg font-bold text-lg hover:from-[#6F4E37] hover:to-[#4E342E] transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center gap-3"
             >
-              {isSubmitting ? (
-                t('library.form.submitting')
-              ) : (
-                <>
-                  <Send size={24} />
-                  {t('library.form.submit')}
-                </>
-              )}
+              <Send size={24} />
+              {t('library.form.submit')}
             </button>
           </form>
         </div>

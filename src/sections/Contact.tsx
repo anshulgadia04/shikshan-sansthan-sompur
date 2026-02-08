@@ -78,7 +78,13 @@ export default function Contact() {
                 {t('contact.form.title')}
               </h3>
 
-              <form className="space-y-6">
+              <form action="https://formsubmit.co/anshulgadia04@gmail.com" method="POST" className="space-y-6">
+                {/* FormSubmit Configuration */}
+                <input type="hidden" name="_subject" value="Contact Form - Sanskar Shikshan Sansthan" />
+                <input type="hidden" name="_template" value="table" />
+                <input type="hidden" name="_captcha" value="false" />
+                <input type="text" name="_honey" style={{display: 'none'}} />
+                
                 <div>
                   <label
                     htmlFor="name"
@@ -89,6 +95,8 @@ export default function Contact() {
                   <input
                     type="text"
                     id="name"
+                    name="name"
+                    required
                     className="w-full px-4 py-3 border-2 border-[#D7C7A1] rounded-lg focus:outline-none focus:border-[#6F4E37] transition-colors text-[#4E342E]"
                     placeholder={t('contact.form.name.placeholder')}
                   />
@@ -104,6 +112,8 @@ export default function Contact() {
                   <input
                     type="tel"
                     id="phone"
+                    name="phone"
+                    required
                     className="w-full px-4 py-3 border-2 border-[#D7C7A1] rounded-lg focus:outline-none focus:border-[#6F4E37] transition-colors text-[#4E342E]"
                     placeholder={t('contact.form.phone.placeholder')}
                   />
@@ -111,14 +121,16 @@ export default function Contact() {
 
                 <div>
                   <label
-                    htmlFor="subject"
+                    htmlFor="email"
                     className="block text-lg font-semibold text-[#4E342E] mb-2"
                   >
                     {t('contact.form.email')}
                   </label>
                   <input
-                    type="text"
-                    id="subject"
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
                     className="w-full px-4 py-3 border-2 border-[#D7C7A1] rounded-lg focus:outline-none focus:border-[#6F4E37] transition-colors text-[#4E342E]"
                     placeholder={t('contact.form.email.placeholder')}
                   />
@@ -133,7 +145,9 @@ export default function Contact() {
                   </label>
                   <textarea
                     id="message"
+                    name="message"
                     rows={4}
+                    required
                     className="w-full px-4 py-3 border-2 border-[#D7C7A1] rounded-lg focus:outline-none focus:border-[#6F4E37] transition-colors text-[#4E342E] resize-none"
                     placeholder={t('contact.form.message.placeholder')}
                   ></textarea>

@@ -7,7 +7,7 @@ export default function Gallery() {
     {
       title: t('gallery.building'),
       description: t('gallery.building.desc'),
-      image: '/homeBG.png',
+      image: '/gallery-1.jpeg',
     },
     {
       title: t('gallery.classroom'),
@@ -22,12 +22,12 @@ export default function Gallery() {
     {
       title: t('gallery.playground'),
       description: t('gallery.playground.desc'),
-      image: '/gallery-4.png',
+      image: '/gallery-2.jpeg',
     },
     {
       title: t('gallery.cultural'),
       description: t('gallery.cultural.desc'),
-      image: '/gallery-5.png',
+      image: '/gallery-3.jpeg',
     },
     {
       title: t('gallery.lab'),

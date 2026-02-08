@@ -11,10 +11,10 @@ export default function Hero({ onNavigate }: HeroProps) {
   return (
     <section
       className="relative min-h-screen flex items-center justify-center text-white overflow-hidden bg-[#4E342E]"
-      style={{ backgroundImage: "url('/homeBG.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}
+      style={{ backgroundImage: "url('/gallery-1.jpeg')", backgroundSize: 'cover', backgroundPosition: 'center' }}
     >
       {/* Dark maroon overlay to match screenshot tint */}
-      <div className="absolute inset-0 bg-[#4E342E]/75" />
+      <div className="absolute inset-0 bg-[#4E342E]/50" />
       {/* Image-based gradient overlay with low opacity */}
       <div
         className="absolute inset-0"
@@ -73,14 +73,14 @@ export default function Hero({ onNavigate }: HeroProps) {
       </div>
 
       {/* Decorative diamond star bottom-right */}
-      <div className="absolute bottom-8 right-8 w-5 h-5 bg-[#D7C7A1] rotate-45 rounded-sm opacity-90" />
+      {/* <div className="absolute bottom-8 right-8 w-5 h-5 bg-[#D7C7A1] rotate-45 rounded-sm opacity-90" /> */}
 
       {/* Curved separator at bottom */}
-      <div className="absolute bottom-0 left-0 right-0">
+      {/* <div className="absolute bottom-0 left-0 right-0">
         <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="w-full h-16 sm:h-24">
           <path d="M0,0 L0,80 Q300,120 600,80 T1200,80 L1200,0 Z" fill="#F5EFE6"></path>
         </svg>
-      </div>
+      </div> */}
     </section>
   );
 }
