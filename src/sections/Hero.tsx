@@ -38,7 +38,7 @@ export default function Hero({ onNavigate }: HeroProps) {
           {t('hero.title')}
         </h1>
 
-        <p className="text-xl sm:text-2xl md:text-3xl mb-4 text-[#D7C7A1] font-semibold">
+        <p className="text-xl sm:text-2xl md:text-4xl mb-4 text-[#D7C7A1]   font-extrabold tracking-widest">
           {t('hero.location')}
         </p>
 

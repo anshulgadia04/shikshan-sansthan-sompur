@@ -1,4 +1,5 @@
 import { useLanguage } from '../contexts/LanguageContext';
+import { Instagram } from 'lucide-react';
 
 export default function Footer() {
   const { t } = useLanguage();
@@ -6,7 +7,7 @@ export default function Footer() {
   return (
     <footer className="bg-[#4E342E] text-[#F5EFE6] py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
             <img
               src="/logo.png"
@@ -24,8 +25,8 @@ export default function Footer() {
             <h4 className="text-lg font-semibold mb-4">{t('footer.contact.title')}</h4>
             <div className="space-y-2 text-[#D7C7A1]">
               <p>{t('footer.contact.location')}</p>
-              <p>{t('footer.contact.phone1')}</p>
-              <p>{t('footer.contact.phone2')}</p>
+              <a href="tel:+917742682383" className="block hover:text-[#F5EFE6] transition-colors">{t('footer.contact.phone')}</a>
+              <a href="mailto:shivmenaria77@gmail.com" className="block hover:text-[#F5EFE6] transition-colors break-all">{t('footer.contact.email')}</a>
             </div>
           </div>
 
@@ -36,6 +37,19 @@ export default function Footer() {
               <li>{t('footer.values.service')}</li>
               <li>{t('footer.values.sanskar')}</li>
             </ul>
+          </div>
+
+          <div>
+            <h4 className="text-lg font-semibold mb-4">{t('footer.social.title')}</h4>
+            <a 
+              href="https://www.instagram.com/sanskar_education_institute?utm_source=qr&igsh=YndpejJzczB4ZWU2" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-[#D7C7A1] hover:text-[#F5EFE6] transition-colors"
+            >
+              <Instagram size={24} />
+              <span>{t('footer.social.instagram')}</span>
+            </a>
           </div>
         </div>
 

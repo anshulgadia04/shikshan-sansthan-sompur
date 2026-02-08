@@ -46,12 +46,23 @@ export default function Contact() {
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-[#4E342E] mb-3">{t('contact.phone.title')}</h3>
-                  <p className="text-[#6F4E37] leading-relaxed mb-2">
+                  <a href="tel:+917742682383" className="text-[#6F4E37] leading-relaxed hover:text-[#4E342E] transition-colors">
                     {t('contact.phone.main')}
-                  </p>
-                  <p className="text-[#6F4E37] leading-relaxed">
-                    {t('contact.phone.alt')}
-                  </p>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-gradient-to-br from-[#F5EFE6] to-white p-8 rounded-2xl shadow-lg border-l-4 border-[#8D6E63]">
+              <div className="flex items-start gap-4">
+                <div className="p-3 bg-[#8D6E63] rounded-full flex-shrink-0">
+                  <Mail size={28} className="text-[#F5EFE6]" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-[#4E342E] mb-3">{t('contact.email.title')}</h3>
+                  <a href="mailto:shivmenaria77@gmail.com" className="text-[#6F4E37] leading-relaxed hover:text-[#4E342E] transition-colors break-all">
+                    {t('contact.email.address')}
+                  </a>
                 </div>
               </div>
             </div>
@@ -64,7 +75,10 @@ export default function Contact() {
                 <div>
                   <h3 className="text-xl font-bold text-[#4E342E] mb-3">{t('contact.timing.title')}</h3>
                   <p className="text-[#6F4E37] leading-relaxed mb-2">
-                    {t('contact.timing.weekday')}
+                    {t('contact.timing.winter')}
+                  </p>
+                  <p className="text-[#6F4E37] leading-relaxed mb-2">
+                    {t('contact.timing.summer')}
                   </p>
                   <p className="text-[#6F4E37] leading-relaxed">{t('contact.timing.sunday')}</p>
                 </div>
@@ -163,13 +177,17 @@ export default function Contact() {
               </form>
             </div>
 
-            <div className="mt-8 bg-gradient-to-br from-[#4E342E] to-[#6F4E37] p-8 rounded-2xl shadow-lg">
-              <div className="aspect-w-16 aspect-h-9 bg-[#F5EFE6] bg-opacity-20 rounded-lg flex items-center justify-center">
-                <div className="text-center">
-                  <MapPin size={48} className="text-[#F5EFE6] mx-auto mb-3 opacity-75" />
-                  <p className="text-[#F5EFE6] text-lg font-semibold">मानचित्र स्थान</p>
-                </div>
-              </div>
+            <div className="mt-8 bg-gradient-to-br from-[#4E342E] to-[#6F4E37] p-4 rounded-2xl shadow-lg">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3631.645230986407!2d74.43039487535826!3d24.463090978190753!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3966470078335759%3A0xbfb55789a21a4912!2sSanskar%20shikshan%20Sansthan!5e0!3m2!1sen!2sin!4v1770561222768!5m2!1sen!2sin"
+                width="100%" 
+                height="450" 
+                style={{border: 0, borderRadius: '0.5rem'}} 
+                allowFullScreen 
+                loading="lazy" 
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Sanskar Shikshan Sansthan Location"
+              ></iframe>
             </div>
           </div>
         </div>
