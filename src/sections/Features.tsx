@@ -135,7 +135,7 @@ export default function Features() {
               <div className="text-4xl sm:text-5xl font-bold mb-2 text-white">200+</div>
               <p className="text-[#F5EFE6] text-sm sm:text-base">{t('features.additional.students')}</p>
             </div>
-          </div>
+          </div>  
         </div>
       </div>
     </section>

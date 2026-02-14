@@ -12,7 +12,7 @@ export default function Contact() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const whatsappMessage = `*Contact Form - Sanskar Shikshan Sansthan*%0A%0A*Name:* ${name}%0A*Phone:* ${phone}%0A*Email:* ${email}%0A*Message:* ${message}`;
-    const whatsappUrl = `https://wa.me/919602021473?text=${whatsappMessage}`;
+    const whatsappUrl = `https://wa.me/917742682383?text=${whatsappMessage}`;
     window.open(whatsappUrl, '_blank');
   };
   

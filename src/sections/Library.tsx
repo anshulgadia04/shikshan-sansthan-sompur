@@ -11,7 +11,7 @@ export default function Library() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const whatsappMessage = `*Library Book Request - Sanskar Shikshan Sansthan*%0A%0A*Name:* ${studentName}%0A*Book Name:* ${bookName}%0A*Message:* ${message || 'N/A'}`;
-    const whatsappUrl = `https://wa.me/919602021473?text=${whatsappMessage}`;
+    const whatsappUrl = `https://wa.me/917742682383?text=${whatsappMessage}`;
     window.open(whatsappUrl, '_blank');
   };
 
