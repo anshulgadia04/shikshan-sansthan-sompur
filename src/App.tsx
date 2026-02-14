@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { LanguageProvider } from './contexts/LanguageContext';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import AdmissionModal from './components/AdmissionModal';
 import Hero from './sections/Hero';
 import Highlights from './sections/Highlights';
 import About from './sections/About';
@@ -21,10 +22,15 @@ function App() {
     }
   }, [activeSection]);
 
+  const handleEnquireNow = () => {
+    setActiveSection('contact');
+  };
+
   return (
     <LanguageProvider>
       <div className="min-h-screen bg-[#F5EFE6]">
         <Navbar activeSection={activeSection} onSectionChange={setActiveSection} />
+        <AdmissionModal onEnquireNow={handleEnquireNow} />
 
         <main className="pt-20">
           <div id="home">

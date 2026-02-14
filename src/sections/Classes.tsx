@@ -71,6 +71,8 @@ export default function Classes() {
                       <img
                         src={cls.image1}
                         alt={`${cls.name} 1`}
+                        loading="lazy"
+                        decoding="async"
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                       />
                     </div>
@@ -80,6 +82,8 @@ export default function Classes() {
                       <img
                         src={cls.image2}
                         alt={`${cls.name} 2`}
+                        loading="lazy"
+                        decoding="async"
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                       />
                     </div>
@@ -112,6 +116,8 @@ export default function Classes() {
                 <img 
                   src="/teaching-icon-1.png" 
                   alt="Individual Attention"
+                  loading="lazy"
+                  decoding="async"
                   className="w-16 h-16 object-contain"
                 />
               </div>
@@ -125,6 +131,8 @@ export default function Classes() {
                 <img 
                   src="/teaching-icon-2.png" 
                   alt="Modern Traditional Education"
+                  loading="lazy"
+                  decoding="async"
                   className="w-16 h-16 object-contain"
                 />
               </div>
@@ -138,6 +146,8 @@ export default function Classes() {
                 <img 
                   src="/teaching-icon-3.png" 
                   alt="Regular Assessment"
+                  loading="lazy"
+                  decoding="async"
                   className="w-16 h-16 object-contain"
                 />
               </div>
@@ -151,6 +161,8 @@ export default function Classes() {
                 <img 
                   src="/teaching-icon-4.png" 
                   alt="Curricular Balance"
+                  loading="lazy"
+                  decoding="async"
                   className="w-16 h-16 object-contain"
                 />
               </div>

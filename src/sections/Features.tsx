@@ -1,4 +1,4 @@
-import { Users, Laptop, Trophy, Shield, Heart, BookOpen, X } from 'lucide-react';
+import { X } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { useState } from 'react';
 
@@ -56,7 +56,7 @@ export default function Features() {
             <div
               key={index}
               onClick={() => setOpenModal(index)}
-              className="bg-white p-6 sm:p-8 rounded-2xl shadow-[0_4px_16px_rgba(0,0,0,0.08)] border-2 border-[#4E342E] hover:shadow-[0_8px_24px_rgba(0,0,0,0.12)] hover:-translate-y-1 transition-all duration-300 animate-fade-in group cursor-pointer"
+              className="bg-white  p-6 sm:p-8 rounded-2xl shadow-[0_4px_16px_rgba(0,0,0,0.08)] border-2 border-[#4E342E] hover:shadow-[0_8px_24px_rgba(0,0,0,0.12)] hover:-translate-y-1 transition-all duration-300 animate-fade-in group cursor-pointer"
               style={{ animationDelay: `${index * 80}ms` }}
             >
               <div className="flex justify-center mb-5">
@@ -64,6 +64,8 @@ export default function Features() {
                   <img
                     src={feature.icon}
                     alt={feature.title}
+                    loading="lazy"
+                    decoding="async"
                     className="w-16 h-16 object-contain"
                   />
                 </div>

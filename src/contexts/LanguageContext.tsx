@@ -24,6 +24,7 @@ const translations = {
     // Hero
     'hero.title': 'Sanskar Shikshan Sansthan',
     'hero.location': 'Sompur',
+    'hero.firstBatch': 'Proudly Serving Since 2024-25',
     'hero.tagline': 'Education • Service • Values',
     'hero.description': 'Building bright futures through quality education and strong values. A safe and inspiring environment where every child can flourish.',
     'hero.cta.learn': 'Learn More',
@@ -139,6 +140,10 @@ const translations = {
     'gallery.cultural.desc': 'Annual festivals and competitions',
     'gallery.lab': 'Laboratory',
     'gallery.lab.desc': 'Science laboratory',
+    'gallery.outdoor': 'Outdoor Activities',
+    'gallery.outdoor.desc': 'Fun-filled outdoor activities and school transport',
+    'gallery.trip': 'Educational Trip',
+    'gallery.trip.desc': 'Learning beyond classroom - Educational excursions',
     
     // Contact
     'contact.title': 'Contact Us',
@@ -194,6 +199,7 @@ const translations = {
     // Hero
     'hero.title': 'संस्कार शिक्षण संस्थान',
     'hero.location': 'सोमपुर',
+    'hero.firstBatch': '2024-25 से गर्व से सेवारत',
     'hero.tagline': 'शिक्षा • सेवा • संस्कार',
     'hero.description': 'गुणवत्तापूर्ण शिक्षा और मजबूत संस्कारों के माध्यम से उज्ज्वल भविष्य का निर्माण। एक सुरक्षित और प्रेरक वातावरण जहाँ हर बच्चा फल-फूल सकता है।',
     'hero.cta.learn': 'अधिक जानें',
@@ -309,6 +315,10 @@ const translations = {
     'gallery.cultural.desc': 'वार्षिक उत्सव और प्रतियोगिताएँ',
     'gallery.lab': 'प्रयोगशाला',
     'gallery.lab.desc': 'विज्ञान प्रयोगशाला',
+    'gallery.outdoor': 'बाहरी गतिविधियाँ',
+    'gallery.outdoor.desc': 'मज़ेदार बाहरी गतिविधियाँ और स्कूल परिवहन',
+    'gallery.trip': 'शैक्षिक भ्रमण',
+    'gallery.trip.desc': 'कक्षा से परे सीखना - शैक्षिक यात्राएँ',
     
     // Contact
     'contact.title': 'संपर्क करें',

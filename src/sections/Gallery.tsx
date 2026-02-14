@@ -34,6 +34,16 @@ export default function Gallery() {
       description: t('gallery.lab.desc'),
       image: '/gallery-6.png',
     },
+    {
+      title: t('gallery.outdoor'),
+      description: t('gallery.outdoor.desc'),
+      image: '/gallery-7.jpeg',
+    },
+    {
+      title: t('gallery.trip'),
+      description: t('gallery.trip.desc'),
+      image: '/gallery-8.jpeg',
+    },
   ];
 
   return (
@@ -61,6 +71,8 @@ export default function Gallery() {
                   <img
                     src={item.image}
                     alt={item.title}
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                 </div>

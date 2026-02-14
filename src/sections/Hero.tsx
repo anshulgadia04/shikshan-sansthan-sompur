@@ -1,4 +1,4 @@
-import { BookOpen, GraduationCap } from 'lucide-react';
+import { BookOpen, Award } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 interface HeroProps {
@@ -31,7 +31,13 @@ export default function Hero({ onNavigate }: HeroProps) {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-24">
         <div className="mb-8 flex justify-center">
-          <img className='w-20' src='./homeHandBg.png'/>
+          <img 
+            className='w-20' 
+            src='./homeHandBg.png'
+            alt="School Logo"
+            loading="eager"
+            decoding="async"
+          />
         </div>
 
         <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-6 leading-tight text-shadow-lg">
@@ -41,6 +47,17 @@ export default function Hero({ onNavigate }: HeroProps) {
         <p className="text-xl sm:text-2xl md:text-4xl mb-4 text-[#D7C7A1]   font-extrabold tracking-widest">
           {t('hero.location')}
         </p>
+
+        {/* First Batch Badge */}
+        <div className="flex justify-center mb-6">
+          <div className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#8B6F47]/90 to-[#6F4E37]/90 backdrop-blur-sm rounded-full shadow-xl border-2 border-[#D7C7A1]/50 transform hover:scale-105 transition-all duration-300">
+            <Award className="w-5 h-5 text-[#F5EFE6]" />
+            <span className="text-sm sm:text-base md:text-lg font-bold text-[#F5EFE6] tracking-wide">
+              {t('hero.firstBatch')}
+            </span>
+            <Award className="w-5 h-5 text-[#F5EFE6]" />
+          </div>
+        </div>
 
         <div className="flex items-center justify-center gap-4 mb-12">
           <div className="h-1 w-16 bg-[#D7C7A1] rounded"></div>
