@@ -26,7 +26,7 @@ export default function Footer() {
             <div className="space-y-2 text-[#D7C7A1]">
               <p>{t('footer.contact.location')}</p>
               <a href="tel:+917742682383" className="block hover:text-[#F5EFE6] transition-colors">{t('footer.contact.phone')}</a>
-              <a href="mailto:shivmenaria77@gmail.com" className="block hover:text-[#F5EFE6] transition-colors break-all">{t('footer.contact.email')}</a>
+              <a href="mailto:sanskar120524@gmail.com" className="block hover:text-[#F5EFE6] transition-colors break-all">{t('footer.contact.email')}</a>
             </div>
           </div>
 
