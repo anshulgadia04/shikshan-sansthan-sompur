@@ -1,8 +1,20 @@
+import { useState } from 'react';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 export default function Contact() {
   const { t } = useLanguage();
+  const [name, setName] = useState('');
+  const [phone, setPhone] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const whatsappMessage = `*Contact Form - Sanskar Shikshan Sansthan*%0A%0A*Name:* ${name}%0A*Phone:* ${phone}%0A*Email:* ${email}%0A*Message:* ${message}`;
+    const whatsappUrl = `https://wa.me/919602021473?text=${whatsappMessage}`;
+    window.open(whatsappUrl, '_blank');
+  };
   
   return (
     <section className="py-20 bg-white">
@@ -92,13 +104,7 @@ export default function Contact() {
                 {t('contact.form.title')}
               </h3>
 
-              <form action="https://formsubmit.co/anshulgadia04@gmail.com" method="POST" className="space-y-6">
-                {/* FormSubmit Configuration */}
-                <input type="hidden" name="_subject" value="Contact Form - Sanskar Shikshan Sansthan" />
-                <input type="hidden" name="_template" value="table" />
-                <input type="hidden" name="_captcha" value="false" />
-                <input type="text" name="_honey" style={{display: 'none'}} />
-                
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label
                     htmlFor="name"
@@ -109,7 +115,8 @@ export default function Contact() {
                   <input
                     type="text"
                     id="name"
-                    name="name"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
                     required
                     className="w-full px-4 py-3 border-2 border-[#D7C7A1] rounded-lg focus:outline-none focus:border-[#6F4E37] transition-colors text-[#4E342E]"
                     placeholder={t('contact.form.name.placeholder')}
@@ -126,7 +133,8 @@ export default function Contact() {
                   <input
                     type="tel"
                     id="phone"
-                    name="phone"
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
                     required
                     className="w-full px-4 py-3 border-2 border-[#D7C7A1] rounded-lg focus:outline-none focus:border-[#6F4E37] transition-colors text-[#4E342E]"
                     placeholder={t('contact.form.phone.placeholder')}
@@ -143,7 +151,8 @@ export default function Contact() {
                   <input
                     type="email"
                     id="email"
-                    name="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                     required
                     className="w-full px-4 py-3 border-2 border-[#D7C7A1] rounded-lg focus:outline-none focus:border-[#6F4E37] transition-colors text-[#4E342E]"
                     placeholder={t('contact.form.email.placeholder')}
@@ -159,7 +168,8 @@ export default function Contact() {
                   </label>
                   <textarea
                     id="message"
-                    name="message"
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
                     rows={4}
                     required
                     className="w-full px-4 py-3 border-2 border-[#D7C7A1] rounded-lg focus:outline-none focus:border-[#6F4E37] transition-colors text-[#4E342E] resize-none"

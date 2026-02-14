@@ -1,8 +1,19 @@
+import { useState } from 'react';
 import { BookOpen, Send } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 export default function Library() {
   const { t } = useLanguage();
+  const [studentName, setStudentName] = useState('');
+  const [bookName, setBookName] = useState('');
+  const [message, setMessage] = useState('');
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const whatsappMessage = `*Library Book Request - Sanskar Shikshan Sansthan*%0A%0A*Name:* ${studentName}%0A*Book Name:* ${bookName}%0A*Message:* ${message || 'N/A'}`;
+    const whatsappUrl = `https://wa.me/919602021473?text=${whatsappMessage}`;
+    window.open(whatsappUrl, '_blank');
+  };
 
   return (
     <section className="py-20 bg-gradient-to-br from-[#F5EFE6] to-white">
@@ -35,13 +46,7 @@ export default function Library() {
             {t('library.form.title')}
           </h3>
 
-          <form action="https://formsubmit.co/anshulgadia04@gmail.com" method="POST" className="space-y-6">
-            {/* FormSubmit Configuration */}
-            <input type="hidden" name="_subject" value="Library Book Request - Sanskar Shikshan Sansthan" />
-            <input type="hidden" name="_template" value="table" />
-            <input type="hidden" name="_captcha" value="false" />
-            <input type="text" name="_honey" style={{display: 'none'}} />
-            
+          <form onSubmit={handleSubmit} className="space-y-6">
             <div>
               <label
                 htmlFor="studentName"
@@ -52,39 +57,12 @@ export default function Library() {
               <input
                 type="text"
                 id="studentName"
-                name="studentName"
+                value={studentName}
+                onChange={(e) => setStudentName(e.target.value)}
                 required
                 className="w-full px-4 py-3 border-2 border-[#D7C7A1] rounded-lg focus:outline-none focus:border-[#6F4E37] transition-colors text-[#4E342E] text-lg"
                 placeholder={t('library.form.studentName.placeholder')}
               />
-            </div>
-
-            <div>
-              <label
-                htmlFor="className"
-                className="block text-lg font-semibold text-[#4E342E] mb-2"
-              >
-                {t('library.form.class')} *
-              </label>
-              <select
-                id="className"
-                name="class"
-                required
-                className="w-full px-4 py-3 border-2 border-[#D7C7A1] rounded-lg focus:outline-none focus:border-[#6F4E37] transition-colors text-[#4E342E] text-lg"
-              >
-                <option value="">{t('library.form.class.placeholder')}</option>
-                <option value="Nursery">{t('classes.nursery')}</option>
-                <option value="L.K.G.">{t('classes.lkg')}</option>
-                <option value="U.K.G.">{t('classes.ukg')}</option>
-                <option value="1st">1st</option>
-                <option value="2nd">2nd</option>
-                <option value="3rd">3rd</option>
-                <option value="4th">4th</option>
-                <option value="5th">5th</option>
-                <option value="6th">6th</option>
-                <option value="7th">7th</option>
-                <option value="8th">8th</option>
-              </select>
             </div>
 
             <div>
@@ -97,7 +75,8 @@ export default function Library() {
               <input
                 type="text"
                 id="bookName"
-                name="bookName"
+                value={bookName}
+                onChange={(e) => setBookName(e.target.value)}
                 required
                 className="w-full px-4 py-3 border-2 border-[#D7C7A1] rounded-lg focus:outline-none focus:border-[#6F4E37] transition-colors text-[#4E342E] text-lg"
                 placeholder={t('library.form.bookName.placeholder')}
@@ -113,7 +92,8 @@ export default function Library() {
               </label>
               <textarea
                 id="message"
-                name="message"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
                 rows={4}
                 className="w-full px-4 py-3 border-2 border-[#D7C7A1] rounded-lg focus:outline-none focus:border-[#6F4E37] transition-colors text-[#4E342E] text-lg resize-none"
                 placeholder={t('library.form.message.placeholder')}

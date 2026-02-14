@@ -60,13 +60,6 @@ export default function Hero({ onNavigate }: HeroProps) {
             className="px-8 py-4 bg-[#F5EFE6] text-[#4E342E] rounded-full font-semibold text-lg hover:bg-[#D7C7A1] transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center gap-2 w-full sm:w-auto justify-center"
           >
             <BookOpen size={24} />
-            {t('hero.cta.learn')}
-          </button>
-
-          <button
-            onClick={() => onNavigate('contact')}
-            className="px-8 py-4 bg-transparent border-2 border-[#F5EFE6] text-[#F5EFE6] rounded-full font-semibold text-lg hover:bg-[#F5EFE6] hover:text-[#4E342E] transition-all duration-300 transform hover:scale-105 w-full sm:w-auto"
-          >
             {t('hero.cta.contact')}
           </button>
         </div>

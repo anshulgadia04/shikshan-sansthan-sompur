@@ -11,7 +11,7 @@ export default function Features() {
       icon: '/feature-icon-1.png',
       title: t('features.teachers.title'),
       description: t('features.teachers.desc'),
-    },
+    },  
     {
       icon: '/feature-icon-2.png',
       title: t('features.smart.title'),
@@ -132,7 +132,7 @@ export default function Features() {
               <p className="text-[#F5EFE6] text-sm sm:text-base">{t('features.additional.teachers')}</p>
             </div>
             <div className="text-center">
-              <div className="text-4xl sm:text-5xl font-bold mb-2 text-white">500+</div>
+              <div className="text-4xl sm:text-5xl font-bold mb-2 text-white">200+</div>
               <p className="text-[#F5EFE6] text-sm sm:text-base">{t('features.additional.students')}</p>
             </div>
           </div>
