@@ -70,7 +70,7 @@ export default function AdmissionModal({ onEnquireNow }: AdmissionModalProps) {
 
         {/* Header with Image */}
         <div className="relative h-48 sm:h-64 bg-gradient-to-br from-[#6F4E37] via-[#8B6F47] to-[#A0826D] overflow-hidden">
-          <div className="absolute inset-0 bg-[url('/homeBG.png')] bg-cover bg-center opacity-40"></div>
+          <div className="absolute inset-0 bg-[url('/gallery-1.webp')] bg-cover bg-center opacity-40"></div>
           <div className="relative h-full flex flex-col items-center justify-center text-white p-6">
             {/* <div className="bg-white/20 backdrop-blur-md rounded-full p-4 mb-4 animate-bounce">
               <GraduationCap className="w-12 h-12" />

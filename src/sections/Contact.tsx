@@ -17,7 +17,10 @@ export default function Contact() {
   };
   
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-white" itemScope itemType="https://schema.org/EducationalOrganization">
+      <meta itemProp="name" content="Sanskar Shikshan Sansthan" />
+      <meta itemProp="url" content="https://www.sanskar-education-institute.com/" />
+      <meta itemProp="email" content="sanskar120524@gmail.com" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#4E342E] mb-4">
@@ -31,7 +34,7 @@ export default function Contact() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div className="space-y-8">
-            <div className="bg-gradient-to-br from-[#F5EFE6] to-white p-8 rounded-2xl shadow-lg border-l-4 border-[#4E342E]">
+            <div className="bg-gradient-to-br from-[#F5EFE6] to-white p-8 rounded-2xl shadow-lg border-l-4 border-[#4E342E]" itemProp="address" itemScope itemType="https://schema.org/PostalAddress">
               <div className="flex items-start gap-4">
                 <div className="p-3 bg-[#4E342E] rounded-full flex-shrink-0">
                   <MapPin size={28} className="text-[#F5EFE6]" />
@@ -39,13 +42,12 @@ export default function Contact() {
                 <div>
                   <h3 className="text-xl font-bold text-[#4E342E] mb-3">{t('contact.address.title')}</h3>
                   <p className="text-[#6F4E37] leading-relaxed">
-                    {t('contact.address.line1')}
+                    <span itemProp="streetAddress">{t('contact.address.line1')}, {t('contact.address.line2')}</span>
                     <br />
-                    {t('contact.address.line2')}
+                    <span itemProp="addressRegion">{t('contact.address.line3')}</span>
                     <br />
-                    {t('contact.address.line3')}
-                    <br />
-                    {t('contact.address.line4')}
+                    <span itemProp="postalCode">{t('contact.address.line4')}</span>
+                    <meta itemProp="addressCountry" content="IN" />
                   </p>
                 </div>
               </div>
@@ -58,7 +60,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-[#4E342E] mb-3">{t('contact.phone.title')}</h3>
-                  <a href="tel:+917742682383" className="text-[#6F4E37] leading-relaxed hover:text-[#4E342E] transition-colors">
+                  <a href="tel:+917742682383" itemProp="telephone" className="text-[#6F4E37] leading-relaxed hover:text-[#4E342E] transition-colors">
                     {t('contact.phone.main')}
                   </a>
                 </div>
@@ -72,7 +74,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-[#4E342E] mb-3">{t('contact.email.title')}</h3>
-                  <a href="mailto:sanskar120524@gmail.com" className="text-[#6F4E37] leading-relaxed hover:text-[#4E342E] transition-colors break-all">
+                  <a href="mailto:sanskar120524@gmail.com" itemProp="email" className="text-[#6F4E37] leading-relaxed hover:text-[#4E342E] transition-colors break-all">
                     {t('contact.email.address')}
                   </a>
                 </div>

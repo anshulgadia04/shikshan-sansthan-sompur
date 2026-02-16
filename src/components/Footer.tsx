@@ -5,7 +5,9 @@ export default function Footer() {
   const { t } = useLanguage();
   
   return (
-    <footer className="bg-[#4E342E] text-[#F5EFE6] py-12">
+    <footer className="bg-[#4E342E] text-[#F5EFE6] py-12" itemScope itemType="https://schema.org/EducationalOrganization">
+      <meta itemProp="name" content="Sanskar Shikshan Sansthan" />
+      <meta itemProp="url" content="https://www.sanskar-education-institute.com/" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
@@ -23,10 +25,11 @@ export default function Footer() {
 
           <div>
             <h4 className="text-lg font-semibold mb-4">{t('footer.contact.title')}</h4>
-            <div className="space-y-2 text-[#D7C7A1]">
-              <p>{t('footer.contact.location')}</p>
-              <a href="tel:+917742682383" className="block hover:text-[#F5EFE6] transition-colors">{t('footer.contact.phone')}</a>
-              <a href="mailto:sanskar120524@gmail.com" className="block hover:text-[#F5EFE6] transition-colors break-all">{t('footer.contact.email')}</a>
+            <div className="space-y-2 text-[#D7C7A1]" itemProp="address" itemScope itemType="https://schema.org/PostalAddress">
+              <p itemProp="streetAddress">{t('footer.contact.location')}</p>
+              <meta itemProp="addressCountry" content="IN" />
+              <a href="tel:+917742682383" itemProp="telephone" className="block hover:text-[#F5EFE6] transition-colors">{t('footer.contact.phone')}</a>
+              <a href="mailto:sanskar120524@gmail.com" itemProp="email" className="block hover:text-[#F5EFE6] transition-colors break-all">{t('footer.contact.email')}</a>
             </div>
           </div>
 

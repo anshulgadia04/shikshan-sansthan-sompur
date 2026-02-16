@@ -1,0 +1,14 @@
+# robots.txt for Sanskar Shikshan Sansthan, Sompur
+# Allows all search engines to index the site
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.sanskar-education-institute.com/sitemap.xml
+
+# Contact Information for Bots
+# School Name: Sanskar Shikshan Sansthan, Sompur
+# Phone: +917742682383
+# Email: sanskar120524@gmail.com
+# Location: Sompur, Bari Sadri, Chittorgarh, Rajasthan - 312403

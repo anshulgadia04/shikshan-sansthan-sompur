@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- Homepage -->
+  <url>
+    <loc>https://www.sanskar-education-institute.com/</loc>
+    <lastmod>2026-02-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://www.sanskar-education-institute.com/logo.webp</image:loc>
+      <image:title>Sanskar Shikshan Sansthan Logo</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.sanskar-education-institute.com/gallery-1.webp</image:loc>
+      <image:title>School Building</image:title>
+    </image:image>
+  </url>
+
+  <!-- About Section -->
+  <url>
+    <loc>https://www.sanskar-education-institute.com/#about</loc>
+    <lastmod>2026-02-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Classes Section -->
+  <url>
+    <loc>https://www.sanskar-education-institute.com/#classes</loc>
+    <lastmod>2026-02-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Library Section -->
+  <url>
+    <loc>https://www.sanskar-education-institute.com/#library</loc>
+    <lastmod>2026-02-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Features Section -->
+  <url>
+    <loc>https://www.sanskar-education-institute.com/#features</loc>
+    <lastmod>2026-02-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Gallery Section -->
+  <url>
+    <loc>https://www.sanskar-education-institute.com/#gallery</loc>
+    <lastmod>2026-02-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Contact Section - Most important for phone number visibility -->
+  <url>
+    <loc>https://www.sanskar-education-institute.com/#contact</loc>
+    <lastmod>2026-02-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+</urlset>
