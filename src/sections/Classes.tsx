@@ -8,36 +8,36 @@ export default function Classes() {
       name: t('classes.nursery'),
       description: t('classes.nursery.desc'),
       ageGroup: t('classes.nursery.age'),
-      image1: '/class-nursery-1.png',
-      image2: '/class-nursery-2.png',
+      image1: '/class-nursery-1.webp',
+      image2: '/class-nursery-2.webp',
     },
     {
       name: t('classes.lkg'),
       description: t('classes.lkg.desc'),
       ageGroup: t('classes.lkg.age'),
-      image1: '/class-lkg-1.png',
-      image2: '/class-lkg-2.png',
+      image1: '/class-lkg-1.webp',
+      image2: '/class-lkg-2.webp',
     },
     {
       name: t('classes.ukg'),
       description: t('classes.ukg.desc'),
       ageGroup: t('classes.ukg.age'),
-      image1: '/class-ukg-1.png',
-      image2: '/class-ukg-2.png',
+      image1: '/class-ukg-1.webp',
+      image2: '/class-ukg-2.webp',
     },
     {
       name: t('classes.primary'),
       description: t('classes.primary.desc'),
       ageGroup: t('classes.primary.age'),
-      image1: '/class-primary-1.png',
-      image2: '/class-primary-2.png',
+      image1: '/class-primary-1.webp',
+      image2: '/class-primary-2.webp',
     },
     {
       name: t('classes.secondary'),
       description: t('classes.secondary.desc'),
       ageGroup: t('classes.secondary.age'),
-      image1: '/class-secondary-1.png',
-      image2: '/class-secondary-2.png',
+      image1: '/class-secondary-1.webp',
+      image2: '/class-secondary-2.webp',
     },
   ];
 
@@ -118,8 +118,10 @@ export default function Classes() {
             <div className="flex items-center gap-6 group">
               <div className="flex-shrink-0 transition-transform duration-300 group-hover:scale-110">
                 <img 
-                  src="/teaching-icon-1.png" 
+                  src="/teaching-icon-1.webp" 
                   alt="Individual Attention"
+                  width="64"
+                  height="64"
                   loading="lazy"
                   decoding="async"
                   className="w-16 h-16 object-contain"
@@ -133,8 +135,10 @@ export default function Classes() {
             <div className="flex items-center gap-6 group">
               <div className="flex-shrink-0 transition-transform duration-300 group-hover:scale-110">
                 <img 
-                  src="/teaching-icon-2.png" 
+                  src="/teaching-icon-2.webp" 
                   alt="Modern Traditional Education"
+                  width="64"
+                  height="64"
                   loading="lazy"
                   decoding="async"
                   className="w-16 h-16 object-contain"
@@ -148,8 +152,10 @@ export default function Classes() {
             <div className="flex items-center gap-6 group">
               <div className="flex-shrink-0 transition-transform duration-300 group-hover:scale-110">
                 <img 
-                  src="/teaching-icon-3.png" 
+                  src="/teaching-icon-3.webp" 
                   alt="Regular Assessment"
+                  width="64"
+                  height="64"
                   loading="lazy"
                   decoding="async"
                   className="w-16 h-16 object-contain"
@@ -163,8 +169,10 @@ export default function Classes() {
             <div className="flex items-center gap-6 group">
               <div className="flex-shrink-0 transition-transform duration-300 group-hover:scale-110">
                 <img 
-                  src="/teaching-icon-4.png" 
+                  src="/teaching-icon-4.webp" 
                   alt="Curricular Balance"
+                  width="64"
+                  height="64"
                   loading="lazy"
                   decoding="async"
                   className="w-16 h-16 object-contain"

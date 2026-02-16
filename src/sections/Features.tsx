@@ -8,32 +8,32 @@ export default function Features() {
   
   const features = [
     {
-      icon: '/feature-icon-1.png',
+      icon: '/feature-icon-1.webp',
       title: t('features.teachers.title'),
       description: t('features.teachers.desc'),
     },  
     {
-      icon: '/feature-icon-2.png',
+      icon: '/feature-icon-2.webp',
       title: t('features.smart.title'),
       description: t('features.smart.desc'),
     },
     {
-      icon: '/feature-icon-3.png',
+      icon: '/feature-icon-3.webp',
       title: t('features.sports.title'),
       description: t('features.sports.desc'),
     },
     {
-      icon: '/feature-icon-4.png',
+      icon: '/feature-icon-4.webp',
       title: t('features.safety.title'),
       description: t('features.safety.desc'),
     },
     {
-      icon: '/feature-icon-5.png',
+      icon: '/feature-icon-5.webp',
       title: t('features.sanskar.title'),
       description: t('features.sanskar.desc'),
     },
     {
-      icon: '/feature-icon-6.png',
+      icon: '/feature-icon-6.webp',
       title: t('features.library.title'),
       description: t('features.library.desc'),
     },
@@ -64,6 +64,8 @@ export default function Features() {
                   <img
                     src={feature.icon}
                     alt={feature.title}
+                    width="64"
+                    height="64"
                     loading="lazy"
                     decoding="async"
                     className="w-16 h-16 object-contain"

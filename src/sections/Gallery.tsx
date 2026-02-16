@@ -7,42 +7,42 @@ export default function Gallery() {
     {
       title: t('gallery.building'),
       description: t('gallery.building.desc'),
-      image: '/gallery-1.jpeg',
+      image: '/gallery-1.webp',
     },
     {
       title: t('gallery.classroom'),
       description: t('gallery.classroom.desc'),
-      image: '/gallery-2.png',
+      image: '/gallery-2.webp',
     },
     {
       title: t('gallery.library'),
       description: t('gallery.library.desc'),
-      image: '/gallery-3.png',
+      image: '/gallery-3.webp',
     },
     {
       title: t('gallery.playground'),
       description: t('gallery.playground.desc'),
-      image: '/gallery-2.jpeg',
+      image: '/gallery-2.webp',
     },
     {
       title: t('gallery.cultural'),
       description: t('gallery.cultural.desc'),
-      image: '/gallery-3.jpeg',
+      image: '/gallery-3.webp',
     },
     {
       title: t('gallery.lab'),
       description: t('gallery.lab.desc'),
-      image: '/gallery-6.png',
+      image: '/gallery-6.webp',
     },
     {
       title: t('gallery.outdoor'),
       description: t('gallery.outdoor.desc'),
-      image: '/gallery-7.jpeg',
+      image: '/gallery-7.webp',
     },
     {
       title: t('gallery.trip'),
       description: t('gallery.trip.desc'),
-      image: '/gallery-8.jpeg',
+      image: '/gallery-8.webp',
     },
   ];
 

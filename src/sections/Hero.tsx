@@ -11,7 +11,7 @@ export default function Hero({ onNavigate }: HeroProps) {
   return (
     <section
       className="relative min-h-screen flex items-center justify-center text-white overflow-hidden bg-[#4E342E]"
-      style={{ backgroundImage: "url('/gallery-1.jpeg')", backgroundSize: 'cover', backgroundPosition: 'center' }}
+      style={{ backgroundImage: "url('/gallery-1.webp')", backgroundSize: 'cover', backgroundPosition: 'center' }}
     >
       {/* Dark maroon overlay to match screenshot tint */}
       <div className="absolute inset-0 bg-[#4E342E]/50" />
@@ -19,7 +19,7 @@ export default function Hero({ onNavigate }: HeroProps) {
       <div
         className="absolute inset-0"
         style={{
-          backgroundImage: "url('/overlay.png')",
+          backgroundImage: "url('/overlay.webp')",
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           opacity: 0.4,
@@ -33,7 +33,7 @@ export default function Hero({ onNavigate }: HeroProps) {
         <div className="mb-8 flex justify-center">
           <img 
             className='w-20' 
-            src='./homeHandBg.png'
+            src='./homeHandBg.webp'
             alt="School Logo"
             width="80"
             height="80"

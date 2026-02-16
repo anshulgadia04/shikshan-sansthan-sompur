@@ -36,7 +36,7 @@ export default function Navbar({ activeSection, onSectionChange }: NavbarProps) 
             aria-label={t('nav.home')}
           >
             <img
-              src="/logo.png"
+              src="/logo.webp"
               alt={t('hero.title')}
               width="80"
               height="80"
