@@ -15,15 +15,17 @@
     <meta name="twitter:description" content="नर्सरी से आठवीं कक्षा तक गुणवत्तापूर्ण शिक्षा" />
     <meta name="twitter:image" content="/gallery-1.jpeg" />
     
-    <!-- Preload critical resources -->
-    <link rel="preload" href="/gallery-1.jpeg" as="image" />
-    <link rel="preload" href="/homeHandBg.png" as="image" />
-    <link rel="preload" href="/logo.png" as="image" />
-    
-    <!-- Fonts: Noto Sans/Serif Devanagari for Hindi typography -->
+    <!-- Preconnect to speed up font loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700&family=Noto+Serif+Devanagari:wght@400;600;700&display=swap" rel="stylesheet" />
+    
+    <!-- Critical image preloads -->
+    <link rel="preload" href="/homeHandBg.png" as="image" />
+    <link rel="preload" href="/gallery-1.jpeg" as="image" />
+    
+    <!-- Async font loading to prevent render blocking -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700&family=Noto+Serif+Devanagari:wght@400;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700&family=Noto+Serif+Devanagari:wght@400;600;700&display=swap" /></noscript>
   </head>
   <body>
     <div id="root"></div>

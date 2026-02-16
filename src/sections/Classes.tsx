@@ -71,6 +71,8 @@ export default function Classes() {
                       <img
                         src={cls.image1}
                         alt={`${cls.name} 1`}
+                        width="200"
+                        height="96"
                         loading="lazy"
                         decoding="async"
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
@@ -82,6 +84,8 @@ export default function Classes() {
                       <img
                         src={cls.image2}
                         alt={`${cls.name} 2`}
+                        width="200"
+                        height="96"
                         loading="lazy"
                         decoding="async"
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"

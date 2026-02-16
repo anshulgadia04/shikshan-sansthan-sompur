@@ -1,16 +1,25 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, lazy, Suspense } from 'react';
 import { LanguageProvider } from './contexts/LanguageContext';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import AdmissionModal from './components/AdmissionModal';
 import Hero from './sections/Hero';
 import Highlights from './sections/Highlights';
-import About from './sections/About';
-import Classes from './sections/Classes';
-import Library from './sections/Library';
-import Features from './sections/Features';
-import Gallery from './sections/Gallery';
-import Contact from './sections/Contact';
+
+// Lazy load sections that are not immediately visible
+const About = lazy(() => import('./sections/About'));
+const Classes = lazy(() => import('./sections/Classes'));
+const Library = lazy(() => import('./sections/Library'));
+const Features = lazy(() => import('./sections/Features'));
+const Gallery = lazy(() => import('./sections/Gallery'));
+const Contact = lazy(() => import('./sections/Contact'));
+
+// Loading fallback component
+const SectionLoader = () => (
+  <div className="flex items-center justify-center py-20">
+    <div className="w-12 h-12 border-4 border-[#4E342E] border-t-transparent rounded-full animate-spin"></div>
+  </div>
+);
 
 function App() {
   const [activeSection, setActiveSection] = useState('home');
@@ -38,29 +47,41 @@ function App() {
             <Highlights />
           </div>
 
-          <div id="about">
-            <About />
-          </div>
+          <Suspense fallback={<SectionLoader />}>
+            <div id="about">
+              <About />
+            </div>
+          </Suspense>
 
-          <div id="classes">
-            <Classes />
-          </div>
+          <Suspense fallback={<SectionLoader />}>
+            <div id="classes">
+              <Classes />
+            </div>
+          </Suspense>
 
-          <div id="library">
-            <Library />
-          </div>
+          <Suspense fallback={<SectionLoader />}>
+            <div id="library">
+              <Library />
+            </div>
+          </Suspense>
 
-          <div id="features">
-            <Features />
-          </div>
+          <Suspense fallback={<SectionLoader />}>
+            <div id="features">
+              <Features />
+            </div>
+          </Suspense>
 
-          <div id="gallery">
-            <Gallery />
-          </div>
+          <Suspense fallback={<SectionLoader />}>
+            <div id="gallery">
+              <Gallery />
+            </div>
+          </Suspense>
 
-          <div id="contact">
-            <Contact />
-          </div>
+          <Suspense fallback={<SectionLoader />}>
+            <div id="contact">
+              <Contact />
+            </div>
+          </Suspense>
         </main>
 
         <Footer />

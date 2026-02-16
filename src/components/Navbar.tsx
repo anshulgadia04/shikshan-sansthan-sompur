@@ -38,6 +38,10 @@ export default function Navbar({ activeSection, onSectionChange }: NavbarProps) 
             <img
               src="/logo.png"
               alt={t('hero.title')}
+              width="80"
+              height="80"
+              loading="eager"
+              decoding="async"
               className="h-20 w-auto mr-3"
             />
             <h1 className="text-sm md:text-xl font-bold text-[#4E342E] group-hover:opacity-90 transition-opacity">

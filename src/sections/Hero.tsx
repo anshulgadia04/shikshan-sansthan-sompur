@@ -35,8 +35,11 @@ export default function Hero({ onNavigate }: HeroProps) {
             className='w-20' 
             src='./homeHandBg.png'
             alt="School Logo"
+            width="80"
+            height="80"
             loading="eager"
             decoding="async"
+            fetchPriority="high"
           />
         </div>
 
