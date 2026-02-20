@@ -22,12 +22,12 @@ export default function Gallery() {
     {
       title: t('gallery.playground'),
       description: t('gallery.playground.desc'),
-      image: '/gallery-2.webp',
+      image: '/gallery-4.png',
     },
     {
       title: t('gallery.cultural'),
       description: t('gallery.cultural.desc'),
-      image: '/gallery-3.webp',
+      image: '/gallery-5.png',
     },
     {
       title: t('gallery.lab'),
